@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Card de Armazenamento -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tv_storage_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Armazenamento"
+                    android:textStyle="bold"
+                    android:textSize="14sp" />
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/progress_storage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="4dp"
+                    app:trackCornerRadius="4dp"
+                    app:trackThickness="12dp"
+                    app:indicatorColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/tv_storage_free"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorSecondaryText" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Card de RAM -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tv_ram_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Memória RAM"
+                    android:textStyle="bold"
+                    android:textSize="14sp" />
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/progress_ram"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:trackCornerRadius="4dp"
+                    app:trackThickness="12dp"
+                    app:indicatorColor="@color/colorAccent" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Botão de Varredura -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_scan"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="12dp"
+            android:text="🔍 Varrer Agora"
+            android:textSize="16sp"
+            app:cornerRadius="12dp" />
+
+        <!-- Layout de Scanning -->
+        <LinearLayout
+            android:id="@+id/layout_scanning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+            android:padding="16dp">
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:indeterminate="true"
+                app:indicatorColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/tv_progress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:text="Varrendo..."
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Card de Resultado -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/layout_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/colorPrimaryLight">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tv_junk_size"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0 MB"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/tv_junk_files"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="12dp"
+                    android:background="@color/colorDivider" />
+
+                <TextView
+                    android:id="@+id/tv_breakdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:fontFamily="monospace" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Botão Limpar Tudo -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_clean"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="8dp"
+            android:text="🧹 Limpar Tudo"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:cornerRadius="12dp"
+            app:backgroundTint="@color/red_warning" />
+
+        <!-- Resultado da limpeza -->
+        <TextView
+            android:id="@+id/tv_clean_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:visibility="gone"
+            android:background="@drawable/bg_success" />
+
+        <!-- Botão Nova Varredura -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_scan_again"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:text="Varrer Novamente"
+            android:visibility="gone"
+            app:cornerRadius="12dp"
+            app:backgroundTint="@color/colorAccent" />
+
+    </LinearLayout>
+</ScrollView>

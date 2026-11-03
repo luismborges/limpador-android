@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Limpador Android</string>
+    <string name="tab_home">Início</string>
+    <string name="tab_files">Arquivos</string>
+    <string name="tab_apps">Apps</string>
+    <string name="tab_boost">Boost</string>
+    <string name="btn_scan">Varrer Agora</string>
+    <string name="btn_clean">Limpar Tudo</string>
+    <string name="btn_boost">Boost RAM</string>
+    <string name="scanning">Varrendo...</string>
+    <string name="cleaning">Limpando...</string>
+    <string name="no_junk">Seu celular está limpo!</string>
+    <string name="permission_rationale">O Limpador Android precisa de acesso ao armazenamento para encontrar e remover arquivos desnecessários.</string>
+</resources>

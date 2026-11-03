@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground">
+
+    <!-- Chips de filtro -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="8dp">
+
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_apk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="APKs"
+                app:chipIcon="@android:drawable/ic_menu_upload"
+                style="@style/Widget.Material3.Chip.Filter" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_cache"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cache"
+                style="@style/Widget.Material3.Chip.Filter" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Temporários"
+                style="@style/Widget.Material3.Chip.Filter" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Logs"
+                style="@style/Widget.Material3.Chip.Filter" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_residual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Residuais"
+                style="@style/Widget.Material3.Chip.Filter" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pastas Vazias"
+                style="@style/Widget.Material3.Chip.Filter" />
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
+    <!-- Aviso: fazer varredura primeiro -->
+    <TextView
+        android:id="@+id/tv_scan_first"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Faça uma varredura na aba Início para ver os arquivos"
+        android:textSize="14sp"
+        android:textColor="@color/colorSecondaryText"
+        android:padding="32dp" />
+
+    <!-- Vazio -->
+    <TextView
+        android:id="@+id/tv_empty"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Nenhum arquivo nesta categoria"
+        android:textSize="14sp"
+        android:textColor="@color/colorSecondaryText"
+        android:visibility="gone" />
+
+    <!-- Lista de arquivos -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_files"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="72dp" />
+
+    <!-- Botão excluir selecionados -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_delete_selected"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_margin="12dp"
+        android:text="Selecione arquivos para excluir"
+        android:enabled="false"
+        app:cornerRadius="10dp"
+        app:backgroundTint="@color/red_warning" />
+
+</LinearLayout>
