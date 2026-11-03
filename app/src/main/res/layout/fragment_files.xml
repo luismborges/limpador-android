@@ -25,77 +25,77 @@
                 android:layout_height="wrap_content"
                 android:text="APKs"
                 app:chipIcon="@android:drawable/ic_menu_upload"
-                style="@style/Widget.Material3.Chip.Filter" />
+                style="@style/Widget.MaterialComponents.Chip.Filter" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_cache"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Cache"
-                style="@style/Widget.Material3.Chip.Filter" />
+                style="@style/Widget.MaterialComponents.Chip.Filter" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_temp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Temporários"
-                style="@style/Widget.Material3.Chip.Filter" />
+                style="@style/Widget.MaterialComponents.Chip.Filter" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_log"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Logs"
-                style="@style/Widget.Material3.Chip.Filter" />
+                style="@style/Widget.MaterialComponents.Chip.Filter" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_residual"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Residuais"
-                style="@style/Widget.Material3.Chip.Filter" />
+                style="@style/Widget.MaterialComponents.Chip.Filter" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_empty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Pastas Vazias"
-                style="@style/Widget.Material3.Chip.Filter" />
+                style="@style/Widget.MaterialComponents.Chip.Filter" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_whatsapp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="WhatsApp"
-                style="@style/Widget.Material3.Chip.Filter" />
+                style="@style/Widget.MaterialComponents.Chip.Filter" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_images"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Imagens"
-                style="@style/Widget.Material3.Chip.Filter" />
+                style="@style/Widget.MaterialComponents.Chip.Filter" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_videos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Vídeos"
-                style="@style/Widget.Material3.Chip.Filter" />
+                style="@style/Widget.MaterialComponents.Chip.Filter" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_documents"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Documentos"
-                style="@style/Widget.Material3.Chip.Filter" />
+                style="@style/Widget.MaterialComponents.Chip.Filter" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_duplicates"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Duplicados"
-                style="@style/Widget.Material3.Chip.Filter" />
+                style="@style/Widget.MaterialComponents.Chip.Filter" />
         </com.google.android.material.chip.ChipGroup>
     </HorizontalScrollView>
 

@@ -25,21 +25,21 @@
                 android:layout_height="wrap_content"
                 android:text="Todos"
                 android:checked="true"
-                style="@style/Widget.Material3.Chip.Filter" />
+                style="@style/Widget.MaterialComponents.Chip.Filter" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_rarely"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Raramente usados"
-                style="@style/Widget.Material3.Chip.Filter" />
+                style="@style/Widget.MaterialComponents.Chip.Filter" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_large"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Mais pesados"
-                style="@style/Widget.Material3.Chip.Filter" />
+                style="@style/Widget.MaterialComponents.Chip.Filter" />
         </com.google.android.material.chip.ChipGroup>
     </HorizontalScrollView>
 
