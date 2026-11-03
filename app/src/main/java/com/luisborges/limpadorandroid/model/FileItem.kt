@@ -23,14 +23,17 @@ data class FileItem(
 }
 
 enum class FileType {
-    APK,          // APKs baixados
-    CACHE,        // Caches de apps
-    TEMP,         // Arquivos temporários
-    THUMBNAIL,    // Miniaturas antigas
-    EMPTY_FOLDER, // Pastas vazias
-    DUPLICATE,    // Arquivos duplicados
-    LOG,          // Arquivos de log
-    RESIDUAL,     // Dados residuais de apps desinstalados
-    VIDEO,        // Vídeos grandes
+    APK,            // APKs baixados
+    CACHE,          // Caches de apps
+    TEMP,           // Arquivos temporários
+    THUMBNAIL,      // Miniaturas antigas
+    EMPTY_FOLDER,   // Pastas vazias
+    DUPLICATE,      // Arquivos duplicados (mesmo conteúdo)
+    LOG,            // Arquivos de log
+    RESIDUAL,       // Dados residuais de apps desinstalados
+    VIDEO,          // Vídeos (todos os tamanhos)
+    IMAGE,          // Imagens (jpg, png, gif, webp…)
+    WHATSAPP_MEDIA, // Mídias recebidas pelo WhatsApp
+    DOCUMENT,       // Documentos (pdf, docx, xlsx…)
     OTHER
 }

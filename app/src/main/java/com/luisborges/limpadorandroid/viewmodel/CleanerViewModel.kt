@@ -94,13 +94,17 @@ class CleanerViewModel(application: Application) : AndroidViewModel(application)
                     _scanProgress.postValue(msg)
                 }
 
-                val apkFiles     = filesMap[FileType.APK] ?: emptyList()
-                val tempFiles    = filesMap[FileType.TEMP] ?: emptyList()
-                val cacheFiles   = filesMap[FileType.CACHE] ?: emptyList()
-                val logFiles     = filesMap[FileType.LOG] ?: emptyList()
-                val emptyFolders = filesMap[FileType.EMPTY_FOLDER] ?: emptyList()
-                val residual     = filesMap[FileType.RESIDUAL] ?: emptyList()
-                val largeFiles   = filesMap[FileType.VIDEO] ?: emptyList()
+                val apkFiles       = filesMap[FileType.APK]            ?: emptyList()
+                val tempFiles      = filesMap[FileType.TEMP]           ?: emptyList()
+                val cacheFiles     = filesMap[FileType.CACHE]          ?: emptyList()
+                val logFiles       = filesMap[FileType.LOG]            ?: emptyList()
+                val emptyFolders   = filesMap[FileType.EMPTY_FOLDER]   ?: emptyList()
+                val residual       = filesMap[FileType.RESIDUAL]       ?: emptyList()
+                val whatsappFiles  = filesMap[FileType.WHATSAPP_MEDIA] ?: emptyList()
+                val imageFiles     = filesMap[FileType.IMAGE]          ?: emptyList()
+                val videoFiles     = filesMap[FileType.VIDEO]          ?: emptyList()
+                val documentFiles  = filesMap[FileType.DOCUMENT]       ?: emptyList()
+                val duplicateFiles = filesMap[FileType.DUPLICATE]      ?: emptyList()
 
                 val allJunk = apkFiles + tempFiles + cacheFiles + logFiles + emptyFolders + residual
                 val totalJunk = allJunk.sumOf { it.size }
@@ -113,16 +117,20 @@ class CleanerViewModel(application: Application) : AndroidViewModel(application)
                 }
 
                 val result = ScanResult(
-                    totalScanned = totalScanned,
-                    totalJunk = totalJunk,
-                    apkFiles = apkFiles,
-                    tempFiles = tempFiles,
-                    cacheFiles = cacheFiles,
-                    logFiles = logFiles,
-                    emptyFolders = emptyFolders,
-                    residualFiles = residual,
-                    largeFiles = largeFiles,
-                    unusedApps = unusedApps
+                    totalScanned   = totalScanned,
+                    totalJunk      = totalJunk,
+                    apkFiles       = apkFiles,
+                    tempFiles      = tempFiles,
+                    cacheFiles     = cacheFiles,
+                    logFiles       = logFiles,
+                    emptyFolders   = emptyFolders,
+                    residualFiles  = residual,
+                    whatsappFiles  = whatsappFiles,
+                    imageFiles     = imageFiles,
+                    videoFiles     = videoFiles,
+                    documentFiles  = documentFiles,
+                    duplicateFiles = duplicateFiles,
+                    unusedApps     = unusedApps
                 )
 
                 _scanResult.postValue(result)

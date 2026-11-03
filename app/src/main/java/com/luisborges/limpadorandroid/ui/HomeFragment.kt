@@ -67,18 +67,31 @@ class HomeFragment : Fragment() {
             binding.tvJunkFiles.text = "${result.allJunkFiles.size} arquivos desnecessários"
 
             val breakdown = buildString {
+                // Lixo automático
                 if (result.apkFiles.isNotEmpty())
-                    appendLine("APKs: ${result.apkFiles.size} (${FileItem.formatSize(result.apkFiles.sumOf { it.size })})")
+                    appendLine("📦 APKs: ${result.apkFiles.size} (${FileItem.formatSize(result.apkFiles.sumOf { it.size })})")
                 if (result.cacheFiles.isNotEmpty())
-                    appendLine("Cache: ${result.cacheFiles.size} (${FileItem.formatSize(result.cacheFiles.sumOf { it.size })})")
+                    appendLine("🗂 Cache: ${result.cacheFiles.size} (${FileItem.formatSize(result.cacheFiles.sumOf { it.size })})")
                 if (result.tempFiles.isNotEmpty())
-                    appendLine("Temp: ${result.tempFiles.size} (${FileItem.formatSize(result.tempFiles.sumOf { it.size })})")
+                    appendLine("⏳ Temp: ${result.tempFiles.size} (${FileItem.formatSize(result.tempFiles.sumOf { it.size })})")
                 if (result.logFiles.isNotEmpty())
-                    appendLine("Logs: ${result.logFiles.size} (${FileItem.formatSize(result.logFiles.sumOf { it.size })})")
+                    appendLine("📄 Logs: ${result.logFiles.size} (${FileItem.formatSize(result.logFiles.sumOf { it.size })})")
                 if (result.emptyFolders.isNotEmpty())
-                    appendLine("Pastas vazias: ${result.emptyFolders.size}")
+                    appendLine("📁 Pastas vazias: ${result.emptyFolders.size}")
                 if (result.residualFiles.isNotEmpty())
-                    appendLine("Residuais: ${result.residualFiles.size} (${FileItem.formatSize(result.residualFiles.sumOf { it.size })})")
+                    appendLine("🗑 Residuais: ${result.residualFiles.size} (${FileItem.formatSize(result.residualFiles.sumOf { it.size })})")
+
+                // Arquivos para revisar
+                if (result.whatsappFiles.isNotEmpty())
+                    appendLine("💬 WhatsApp: ${result.whatsappFiles.size} arquivos (${result.totalWhatsAppSizeFormatted})")
+                if (result.imageFiles.isNotEmpty())
+                    appendLine("🖼 Imagens: ${result.imageFiles.size} (${FileItem.formatSize(result.imageFiles.sumOf { it.size })})")
+                if (result.videoFiles.isNotEmpty())
+                    appendLine("🎬 Vídeos: ${result.videoFiles.size} (${FileItem.formatSize(result.videoFiles.sumOf { it.size })})")
+                if (result.documentFiles.isNotEmpty())
+                    appendLine("📑 Documentos: ${result.documentFiles.size} (${FileItem.formatSize(result.documentFiles.sumOf { it.size })})")
+                if (result.duplicateFiles.isNotEmpty())
+                    appendLine("🔁 Duplicados: ${result.duplicateFiles.size} (${result.totalDuplicatesSizeFormatted} desperdiçados)")
             }
             binding.tvBreakdown.text = breakdown.trim()
         }
